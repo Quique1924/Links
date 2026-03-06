@@ -1,0 +1,117 @@
+body {
+    background-color: #0d1b2a; /* Azul oscuro profundo */
+    background-image: radial-gradient(circle at top, #1b263b 0%, #0d1b2a 100%); /* Un toque de degradado para profundidad */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centra el contenido verticalmente si la pantalla es alta */
+    min-height: 100vh;
+    padding: 20px;
+    margin: 0;
+}
+
+.container {
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.logo {
+    width: 300px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+h1 { font-size: 1.5rem; color: #f9f5f5; margin-bottom: 5px; }
+p { color: #e2dfdf; margin-bottom: 30px; }
+
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.link-card {
+    background-color: #ffffff;
+    color: #333;
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.link-card:active {
+    transform: scale(0.95);
+    background-color: #eee;
+}
+
+/* Estilos base para las transiciones */
+.link-card {
+    transition: all 0.3s ease; /* Suaviza el cambio de color */
+}
+
+/* Facebook */
+.facebook:hover, .facebook:active {
+    background-color: #1877F2;
+    color: white;
+    border-color: #1877F2;
+}
+
+/* Instagram: Usamos un degradado lineal para el efecto real */
+.instagram:hover, .instagram:active {
+    background-color: #1877F2;
+    color: white;
+    border-color: #1877F2;
+}
+
+/* TikTok */
+.tiktok:hover, .tiktok:active {
+    background-color: #1877F2;
+    color: white;
+    border-color: #1877F2;
+}
+
+/* Página Oficial / Website */
+.website:hover, .website:active {
+    background-color: #1877F2;
+    color: white;
+    border-color: #1877F2;
+}
+
+/* WhatsApp (ya lo tenías, pero lo reforzamos) */
+.whatsapp:hover, .whatsapp:active {
+    background-color: #1877F2;
+    color: white;
+    border-color: #1877F2;
+}
+.link-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px; /* Espacio entre el icono y el texto */
+    font-size: 1.1rem;
+    
+    /* Mantén tus estilos anteriores de padding, border-radius, etc. */
+    background-color: #ffffff;
+    color: #333;
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+/* Tamaño de los iconos */
+.link-card i {
+    font-size: 1.4rem;
+    width: 25px; /* Ancho fijo para que los textos queden alineados */
+    text-align: center;
+}
+
+/* Tus efectos de color (hover/active) se mantienen igual que en el paso anterior */
