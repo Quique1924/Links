@@ -1,70 +1,67 @@
-/* 1. Bloquear el scroll en toda la página */
-html, body {
+/* Reset total */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
     width: 100%;
     height: 100%;
-    overflow: hidden; /* Evita el scroll global */
+    overflow: hidden; /* Prohibido el scroll */
     background-color: #0d1b2a;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
     background-image: radial-gradient(circle at top, #1b263b 0%, #0d1b2a 100%);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     justify-content: center;
-    align-items: center; /* Centra el contenido verticalmente */
+    align-items: center; /* Centra el "celular" en medio de la pantalla de la laptop */
 }
 
-/* 2. Contenedor limitado a vista móvil */
 .container {
     width: 100%;
-    max-width: 450px; /* Ancho máximo de un celular grande */
-    height: 100vh;    /* Altura total de la pantalla */
-    padding: 30px 20px;
-    box-sizing: border-box;
+    max-width: 400px; /* Ancho de vista móvil */
+    height: 100vh;    /* Altura total del dispositivo */
+    padding: 5vh 20px; /* Padding dinámico basado en la altura */
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Distribuye espacio entre logo y botones */
+    justify-content: center; /* Agrupa todo al centro verticalmente */
     align-items: center;
-    overflow: hidden; /* Asegura que nada se salga */
+    text-align: center;
 }
 
 header {
-    margin-top: 10px;
     width: 100%;
+    margin-bottom: 2vh;
 }
 
 .logo {
-    width: 80%;
-    max-width: 250px;
+    width: 70%;       /* Reducido para ganar espacio */
+    max-width: 220px;
     height: auto;
     margin-bottom: 10px;
-    /* Si tu logo no es transparente, descomenta la línea de abajo */
-    /* filter: drop-shadow(0px 4px 8px rgba(0,0,0,0.5)); */
 }
 
-h1 { 
-    font-size: 1.4rem; 
-    color: #ffffff; 
-    margin: 5px 0;
+h1 {
+    font-size: 1.2rem; /* Texto más contenido */
+    color: #ffffff;
     letter-spacing: 2px;
-    text-transform: uppercase;
+    margin-bottom: 5px;
 }
 
-p { 
-    color: #a2adbd; 
-    font-size: 0.9rem;
-    margin-bottom: 20px; 
+p {
+    color: #a2adbd;
+    font-size: 0.85rem;
+    margin-bottom: 3vh;
 }
 
-/* 3. Ajuste de botones para que quepan sin scroll */
 .links {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 12px; /* Reducimos un poco el espacio para que quepan todos */
-    margin-bottom: 20px;
+    gap: 1.5vh; /* Espacio flexible entre botones */
 }
 
 .link-card {
@@ -75,81 +72,25 @@ p {
     background-color: rgba(255, 255, 255, 0.95);
     color: #0d1b2a;
     text-decoration: none;
-    padding: 14px; /* Un poco más comprimido para pantallas pequeñas */
+    padding: 12px; /* Un poco más delgado para evitar el desborde */
     border-radius: 12px;
     font-weight: 700;
+    font-size: 0.95rem;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    border: 1px solid transparent;
 }
 
-.link-card:active {
-    transform: scale(0.95);
-    background-color: #eee;
-}
+/* --- EFECTOS DE COLOR (Mantener igual) --- */
 
-/* Estilos base para las transiciones */
-.link-card {
-    transition: all 0.3s ease; /* Suaviza el cambio de color */
-}
+.facebook:hover, .facebook:active { background-color: #1877F2; color: white !important; }
+.instagram:hover, .instagram:active { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); color: white !important; }
+.tiktok:hover, .tiktok:active { background-color: #000; color: white !important; box-shadow: 2px 2px 0 #fe2c55, -2px -2px 0 #25f4ee; }
+.website:hover, .website:active { background-color: #333; color: white !important; }
+.whatsapp:hover, .whatsapp:active { background-color: #25d366; color: white !important; }
 
-/* Facebook */
-.facebook:hover, .facebook:active {
-    background-color: #1877F2;
-    color: white;
-    border-color: #1877F2;
-}
-
-/* Instagram: Usamos un degradado lineal para el efecto real */
-.instagram:hover, .instagram:active {
-    background-color: #1877F2;
-    color: white;
-    border-color: #1877F2;
-}
-
-/* TikTok */
-.tiktok:hover, .tiktok:active {
-    background-color: #1877F2;
-    color: white;
-    border-color: #1877F2;
-}
-
-/* Página Oficial / Website */
-.website:hover, .website:active {
-    background-color: #1877F2;
-    color: white;
-    border-color: #1877F2;
-}
-
-/* WhatsApp (ya lo tenías, pero lo reforzamos) */
-.whatsapp:hover, .whatsapp:active {
-    background-color: #1877F2;
-    color: white;
-    border-color: #1877F2;
-}
-.link-card {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px; /* Espacio entre el icono y el texto */
-    font-size: 1.1rem;
-    
-    /* Mantén tus estilos anteriores de padding, border-radius, etc. */
-    background-color: #ffffff;
-    color: #333;
-    text-decoration: none;
-    padding: 15px;
-    border-radius: 12px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    border: 1px solid #ddd;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-}
-
-/* Tamaño de los iconos */
+/* Ajuste para iconos */
 .link-card i {
-    font-size: 1.4rem;
-    width: 25px; /* Ancho fijo para que los textos queden alineados */
-    text-align: center;
+    font-size: 1.2rem;
+    width: 20px;
 }
-
-/* Tus efectos de color (hover/active) se mantienen igual que en el paso anterior */
