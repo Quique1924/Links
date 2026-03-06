@@ -1,47 +1,85 @@
+/* 1. Bloquear el scroll en toda la página */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Evita el scroll global */
+    background-color: #0d1b2a;
+}
+
 body {
-    background-color: #0d1b2a; /* Azul oscuro profundo */
-    background-image: radial-gradient(circle at top, #1b263b 0%, #0d1b2a 100%); /* Un toque de degradado para profundidad */
+    background-image: radial-gradient(circle at top, #1b263b 0%, #0d1b2a 100%);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     justify-content: center;
-    align-items: center; /* Centra el contenido verticalmente si la pantalla es alta */
-    min-height: 100vh;
-    padding: 20px;
-    margin: 0;
+    align-items: center; /* Centra el contenido verticalmente */
 }
 
+/* 2. Contenedor limitado a vista móvil */
 .container {
-    max-width: 400px;
     width: 100%;
-    text-align: center;
+    max-width: 450px; /* Ancho máximo de un celular grande */
+    height: 100vh;    /* Altura total de la pantalla */
+    padding: 30px 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribuye espacio entre logo y botones */
+    align-items: center;
+    overflow: hidden; /* Asegura que nada se salga */
+}
+
+header {
+    margin-top: 10px;
+    width: 100%;
 }
 
 .logo {
-    width: 300px;
-    height: 100px;
-    object-fit: cover;
-    margin-bottom: 15px;
+    width: 80%;
+    max-width: 250px;
+    height: auto;
+    margin-bottom: 10px;
+    /* Si tu logo no es transparente, descomenta la línea de abajo */
+    /* filter: drop-shadow(0px 4px 8px rgba(0,0,0,0.5)); */
 }
 
-h1 { font-size: 1.5rem; color: #f9f5f5; margin-bottom: 5px; }
-p { color: #e2dfdf; margin-bottom: 30px; }
+h1 { 
+    font-size: 1.4rem; 
+    color: #ffffff; 
+    margin: 5px 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
 
+p { 
+    color: #a2adbd; 
+    font-size: 0.9rem;
+    margin-bottom: 20px; 
+}
+
+/* 3. Ajuste de botones para que quepan sin scroll */
 .links {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 12px; /* Reducimos un poco el espacio para que quepan todos */
+    margin-bottom: 20px;
 }
 
 .link-card {
-    background-color: #ffffff;
-    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #0d1b2a;
     text-decoration: none;
-    padding: 15px;
+    padding: 14px; /* Un poco más comprimido para pantallas pequeñas */
     border-radius: 12px;
-    font-weight: 600;
-    transition: transform 0.2s, box-shadow 0.2s;
-    border: 1px solid #ddd;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    font-weight: 700;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
 .link-card:active {
